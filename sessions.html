@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phyroxia - Sessions</title>
+    <title>Phyroxia - Session Summaries</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,46 +22,15 @@
     </nav>
 
     <div class="container">
-        <h2>Welcome to Phyroxia</h2>
+        <h2>a</h2>
         <p>This is the general content available to all visitors.</p>
         
-        <h3>Access Sensitive Information</h3>
-        <p>Enter the password to reveal hidden content:</p>
-        <input type="password" id="password" placeholder="Enter password">
-        <button onclick="checkPassword()">Submit</button>
-        
-        <div class="hidden-content" id="hiddenContent">
-            <h3>Sensitive Information</h3>
-            <p>This content is restricted and only visible after entering the correct password.</p>
-        </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Phyroxia. All rights reserved.</p>
     </footer>
 
-    <script>
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            const correctPassword = "yourpassword"; // Replace with your password
-            const hiddenContent = document.getElementById('hiddenContent');
-            
-            if (password === correctPassword) {
-                localStorage.setItem('phyroxiaPassword', password); // Store the password
-                hiddenContent.style.display = 'block';
-            } else {
-                alert('Incorrect password.');
-            }
-        }
-
-        // Auto-check password if already stored
-        window.onload = () => {
-            const storedPassword = localStorage.getItem('phyroxiaPassword');
-            const hiddenContent = document.getElementById('hiddenContent');
-            if (storedPassword === "yourpassword") { // Replace with your password
-                hiddenContent.style.display = 'block';
-            }
-        };
-    </script>
+   
 </body>
 </html>
