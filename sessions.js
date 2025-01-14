@@ -20,6 +20,8 @@ sessionForm.addEventListener('submit', (e) => {
             content: sessionContent,
         };
 
+        console.log("Adding session:", session);
+
         sessions.push(session);
         saveSessions();
         renderSessions();
@@ -34,10 +36,13 @@ sessionForm.addEventListener('submit', (e) => {
 // Save sessions to local storage
 function saveSessions() {
     localStorage.setItem('sessions', JSON.stringify(sessions));
+    console.log("Sessions saved:", sessions);
 }
 
 // Render sessions in the container
 function renderSessions() {
+    console.log("Rendering sessions...");
+
     sessionsContainer.innerHTML = ''; // Clear container
     sessions.forEach((session, index) => {
         const sessionElement = document.createElement('div');
@@ -83,6 +88,7 @@ function addDeleteBehavior() {
     deleteButtons.forEach((button) => {
         button.addEventListener('click', (e) => {
             const index = e.target.getAttribute('data-index');
+            console.log("Deleting session at index:", index);
             sessions.splice(index, 1);
             saveSessions();
             renderSessions();
