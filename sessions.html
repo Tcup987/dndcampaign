@@ -5,32 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phyroxia - Session Summaries</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Highlight the active link
+        const currentPage = window.location.pathname.split("/").pop();
+        document.querySelectorAll("nav a").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
-        <h1>Welcome to Phyroxia</h1>
-        <p>Explore the lore, characters, and secrets of the campaign world.</p>
+        <h1>Session Summaries</h1>
+        <p>Review the highlights and adventures from each session.</p>
     </header>
     
     <nav>
         <a href="phyroxia.html">Home</a>
         <a href="world.html">The World</a>
         <a href="timeline.html">Timeline</a>
-        <a href="sessions.html">Session Summaries</a>
+        <a href="sessions.html" class="active">Session Summaries</a>
         <a href="map.html">Interactive Map</a>
         <a href="info.html">Starting Info</a>
     </nav>
 
     <div class="container">
-        <h2>Session Summaries</h2>
-        <p>This is the general content available to all visitors.</p>
-        
+        <h2>Session Updates</h2>
+        <button id="addSessionBtn">Add New Session</button>
+        <div id="sessionsContainer">
+            <!-- Sessions will be dynamically added here -->
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Phyroxia. All rights reserved.</p>
     </footer>
 
-   
+    <script src="sessions.js"></script>
 </body>
 </html>

@@ -74,3 +74,44 @@ footer {
     border-top: 2px solid #4e6c4e;
     margin-top: 2em;
 }
+
+/* Collapsible button styles */
+.collapsible {
+    background-color: #3c5a3c; /* Medium green */
+    color: #f8f1e1;
+    cursor: pointer;
+    padding: 1em;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    margin: 0.5em 0;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.collapsible:hover {
+    background-color: #5b7d5b; /* Slightly lighter green */
+}
+
+.collapsible.active {
+    background-color: #2a422a; /* Darker green when active */
+}
+
+/* Collapsible content styles */
+.content {
+    padding: 0 1em;
+    background-color: #f8f1e1; /* Parchment background */
+    color: #2a422a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 1em;
+}
+
+.content p {
+    margin: 0.5em 0;
+}
+
