@@ -1,64 +1,76 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Garamond', serif;
     margin: 0;
     padding: 0;
-    background-color: #e6f4ea; /* Gentle forest green */
-    color: #333;
+    background-color: #2a422a; /* Gentle forest green */
+    color: #f8f1e1; /* Light parchment text */
+    line-height: 1.6;
 }
+
+/* Header */
 header {
-    background-color: #2e5339;
-    color: white;
+    background-color: #1e2e1e; /* Darker green */
+    color: #f8f1e1;
     padding: 1em 0;
     text-align: center;
+    border-bottom: 2px solid #4e6c4e;
 }
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+/* Navigation */
 nav {
+    background-color: #3c5a3c; /* Medium green */
     display: flex;
     justify-content: center;
-    background-color: #4a7045;
+    padding: 0.5em 0;
 }
+
 nav a {
-    color: white;
+    color: #f8f1e1;
     padding: 0.5em 1em;
     text-decoration: none;
     font-weight: bold;
+    margin: 0 0.2em;
 }
+
 nav a:hover {
-    background-color: #5a8b54;
+    background-color: #5b7d5b; /* Slightly lighter green */
+    border-radius: 5px;
 }
+
+nav a.active {
+    background-color: #5b7d5b;
+    border-radius: 5px;
+    text-decoration: underline;
+}
+
+/* Content Container */
 .container {
+    max-width: 800px;
     margin: 2em auto;
-    max-width: 1000px;
     padding: 1em;
-    background: white;
+    background-color: #f8f1e1; /* Parchment */
+    color: #2a422a; /* Dark forest green text */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-h1, h2 {
-    color: #4a7045;
-}
+
+/* Footer */
 footer {
     text-align: center;
-    background-color: #2e5339;
-    color: white;
+    background-color: #1e2e1e;
+    color: #f8f1e1;
     padding: 1em 0;
+    border-top: 2px solid #4e6c4e;
     margin-top: 2em;
-}
-.hidden-content {
-    display: none;
-    background-color: #eef6f0;
-    padding: 1em;
-    margin-top: 1em;
-    border: 1px solid #4a7045;
-    border-radius: 5px;
-}
-button {
-    background-color: #4a7045;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #5a8b54;
 }
