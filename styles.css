@@ -114,4 +114,59 @@ footer {
 .content p {
     margin: 0.5em 0;
 }
+/* Form styles */
+form {
+    margin-bottom: 2em;
+    background-color: #f8f1e1; /* Parchment background */
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 0.5em 0 0.2em;
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #3c5a3c; /* Medium green */
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2a422a; /* Darker green */
+}
+
+/* Delete button styles */
+.deleteBtn {
+    background-color: #d9534f; /* Red */
+    color: white;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    margin-top: 1em;
+}
+
+.deleteBtn:hover {
+    background-color: #c9302c; /* Darker red */
+}
 

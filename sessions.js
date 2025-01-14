@@ -1,31 +1,45 @@
-// Array to store session data
-let sessions = [];
-
 // References to HTML elements
 const sessionsContainer = document.getElementById('sessionsContainer');
-const addSessionBtn = document.getElementById('addSessionBtn');
+const sessionForm = document.getElementById('sessionForm');
 
-// Add a new session dynamically
-addSessionBtn.addEventListener('click', () => {
-    const sessionNumber = sessions.length + 1;
-    const sessionDate = new Date().toLocaleDateString();
-    const sessionContent = prompt('Enter session details:'); // Replace this with a more advanced input method if needed
+// Retrieve sessions from local storage or initialize an empty array
+let sessions = JSON.parse(localStorage.getItem('sessions')) || [];
 
-    if (sessionContent) {
+// Add a new session
+sessionForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent form submission from reloading the page
+
+    const sessionNumber = document.getElementById('sessionNumber').value.trim();
+    const sessionDate = document.getElementById('sessionDate').value.trim();
+    const sessionContent = document.getElementById('sessionContent').value.trim();
+
+    if (sessionNumber && sessionDate && sessionContent) {
         const session = {
             number: sessionNumber,
             date: sessionDate,
             content: sessionContent,
         };
+
         sessions.push(session);
+        saveSessions();
         renderSessions();
+
+        // Clear form inputs
+        sessionForm.reset();
+    } else {
+        alert('Please fill in all fields.');
     }
 });
+
+// Save sessions to local storage
+function saveSessions() {
+    localStorage.setItem('sessions', JSON.stringify(sessions));
+}
 
 // Render sessions in the container
 function renderSessions() {
     sessionsContainer.innerHTML = ''; // Clear container
-    sessions.reverse().forEach((session) => {
+    sessions.forEach((session, index) => {
         const sessionElement = document.createElement('div');
         sessionElement.classList.add('session');
 
@@ -33,6 +47,7 @@ function renderSessions() {
             <button class="collapsible">Session ${session.number} - ${session.date}</button>
             <div class="content">
                 <p>${session.content}</p>
+                <button class="deleteBtn" data-index="${index}">Delete</button>
             </div>
         `;
 
@@ -41,6 +56,9 @@ function renderSessions() {
 
     // Add functionality to collapsible buttons
     addCollapsibleBehavior();
+
+    // Add functionality to delete buttons
+    addDeleteBehavior();
 }
 
 // Add collapsible behavior to buttons
@@ -58,9 +76,19 @@ function addCollapsibleBehavior() {
         });
     });
 }
-localStorage.setItem('sessions', JSON.stringify(sessions));
-sessions = JSON.parse(localStorage.getItem('sessions')) || [];
 
+// Add delete functionality
+function addDeleteBehavior() {
+    const deleteButtons = document.querySelectorAll('.deleteBtn');
+    deleteButtons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            const index = e.target.getAttribute('data-index');
+            sessions.splice(index, 1);
+            saveSessions();
+            renderSessions();
+        });
+    });
+}
 
-// Initial render (empty at first)
+// Initial render
 renderSessions();

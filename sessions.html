@@ -31,8 +31,21 @@
     </nav>
 
     <div class="container">
+        <h2>Add New Session</h2>
+        <form id="sessionForm">
+            <label for="sessionNumber">Session Number:</label>
+            <input type="text" id="sessionNumber" placeholder="Enter session number" required>
+
+            <label for="sessionDate">Date:</label>
+            <input type="date" id="sessionDate" required>
+
+            <label for="sessionContent">Details:</label>
+            <textarea id="sessionContent" placeholder="Enter session details" rows="5" required></textarea>
+
+            <button type="submit">Add Session</button>
+        </form>
+
         <h2>Session Updates</h2>
-        <button id="addSessionBtn">Add New Session</button>
         <div id="sessionsContainer">
             <!-- Sessions will be dynamically added here -->
         </div>
@@ -45,3 +58,4 @@
     <script src="sessions.js"></script>
 </body>
 </html>
+
