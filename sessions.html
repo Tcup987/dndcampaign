@@ -14,6 +14,31 @@
             }
         });
     </script>
+    <script>
+        async function fetchSessions() {
+            try {
+                const response = await fetch('https://Tcup987.github.io/phyroxia-sessions/sessions.json');
+                const sessions = await response.json();
+
+                const sessionContainer = document.getElementById('sessions');
+                sessionContainer.innerHTML = '';
+
+                sessions.forEach(session => {
+                    const sessionDiv = document.createElement('div');
+                    sessionDiv.className = 'session';
+                    sessionDiv.innerHTML = `
+                        <h3>Session ${session.sessionNumber} - ${session.date}</h3>
+                        <p>${session.details}</p>
+                    `;
+                    sessionContainer.appendChild(sessionDiv);
+                });
+            } catch (error) {
+                console.error('Error fetching session data:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchSessions);
+    </script>
 </head>
 <body>
     <header>
@@ -31,26 +56,9 @@
     </nav>
 
     <div class="container">
-        <h2>Session Updates</h2>
-        <div id="sessionsContainer">
-         <!-- Sessions will be dynamically added here -->
+        <div id="sessions">
+            <!-- Session summaries will be loaded here -->
         </div>
-    </div>
-
-    <div class="container">
-        <h2>Add New Session</h2>
-        <form id="sessionForm">
-            <label for="sessionNumber">Session Number:</label>
-            <input type="text" id="sessionNumber" placeholder="Enter session number" required>
-
-            <label for="sessionDate">Date:</label>
-            <input type="date" id="sessionDate" required>
-
-            <label for="sessionContent">Details:</label>
-            <textarea id="sessionContent" placeholder="Enter session details" rows="5" required></textarea>
-
-            <button type="submit">Add Session</button>
-        </form>
     </div>
 
     <footer>
