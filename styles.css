@@ -190,25 +190,6 @@ form button:hover {
     text-decoration: underline;
 }
 
-/* General container styling for sections */
-.container div {
-    margin-bottom: 2em;
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
 
-/* Headers for sections */
-.container h2 {
-    color: #004d00;
-    margin-bottom: 0.5em;
-}
-
-/* Lists within sections */
-.container ul {
-    list-style-type: disc;
-    margin-left: 1.5em;
-}
 
 
