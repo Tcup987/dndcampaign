@@ -14,14 +14,17 @@
             border-radius: 8px;
             margin: 20px auto;
             max-width: 80%;
+            height: 500;
         }
 
         .map-container img {
-            max-width: 100%;
-            height: auto;
-            transition: transform 0.3s ease-in-out;
-            cursor: zoom-in;
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain; /* This keeps the image's aspect ratio */
+        transition: transform 0.3s ease-in-out;
+        cursor: zoom-in;
         }
+
     </style>
 
 </head>
