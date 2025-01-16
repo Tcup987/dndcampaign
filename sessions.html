@@ -37,48 +37,33 @@
         });
     </script>
     <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-        const sessionList = document.getElementById('session-list');
+        async function fetchSessions() {
+            try {
+                const response = await fetch('https://<your-username>.github.io/phyroxia-sessions/sessions.json');
+                const sessions = await response.json();
 
-        try {
-            const response = await fetch('https://<your-username>.github.io/phyroxia-sessions/sessions.json');
-            if (!response.ok) throw new Error('Failed to load sessions');
-            
-            const sessions = await response.json();
-            renderSessions(sessions);
-        } catch (error) {
-            console.error('Error loading sessions:', error);
-            sessionList.innerHTML = '<p>Failed to load sessions. Please try again later.</p>';
+                const sessionContainer = document.getElementById('sessions');
+                sessionContainer.innerHTML = '';
+
+                sessions.forEach(session => {
+                    const sessionDiv = document.createElement('div');
+                    sessionDiv.className = 'session';
+
+                    sessionDiv.innerHTML = `
+                        <div class="session-header" onclick="toggleSession(this)">
+                            Session ${session.sessionNumber} - ${session.date}
+                        </div>
+                        <div class="session-details">
+                            <p>${session.details}</p>
+                        </div>
+                    `;
+
+                    sessionContainer.appendChild(sessionDiv);
+                });
+            } catch (error) {
+                console.error('Error fetching session data:', error);
+            }
         }
-    });
-
-    function renderSessions(sessions) {
-        const sessionList = document.getElementById('session-list');
-        sessionList.innerHTML = ''; // Clear existing content
-
-        sessions.forEach(session => {
-            const sessionElement = document.createElement('div');
-            sessionElement.className = 'session-item';
-
-            sessionElement.innerHTML = `
-                <h3>${session.sessionNumber}: ${session.date}</h3>
-                <button class="toggle-details">Show Details</button>
-                <p class="session-details" style="display: none;">${session.details}</p>
-            `;
-
-            // Add collapsible behavior
-            const toggleButton = sessionElement.querySelector('.toggle-details');
-            const details = sessionElement.querySelector('.session-details');
-
-            toggleButton.addEventListener('click', () => {
-                const isHidden = details.style.display === 'none';
-                details.style.display = isHidden ? 'block' : 'none';
-                toggleButton.textContent = isHidden ? 'Hide Details' : 'Show Details';
-            });
-
-            sessionList.appendChild(sessionElement);
-        });
-    }
 
         function toggleSession(headerElement) {
             const details = headerElement.nextElementSibling;
@@ -88,7 +73,7 @@
                 details.style.display = 'block';
             }
         }
-        
+
     </script>
 </head>
 <body>
