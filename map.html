@@ -75,75 +75,15 @@
     <div class="container">
         <h2>Map of Phyroxia</h2>
         <div class="map-container">
-            <img src="Phyroxia_Map.jpg" alt="Campaign Map" id="map">
+            <img src="Phyroxia_Map.jpg" alt="Map of Phyroxia">
         </div>
     </div>
     
 
+
     <footer>
         <p>&copy; 2025 Phyroxia. All rights reserved.</p>
     </footer>
-
-    <script>
-        const map = document.getElementById("map");
-        let scale = 1;
-        let originX = 0;
-        let originY = 0;
-        let isDragging = false;
-        let startX, startY;
-
-        map.addEventListener("wheel", (e) => {
-            e.preventDefault();
-            const scaleAmount = 0.1;
-            const rect = map.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const mouseY = e.clientY - rect.top;
-
-            if (e.deltaY < 0) {
-                scale += scaleAmount;
-            } else {
-                scale -= scaleAmount;
-                if (scale < 1) scale = 1; // Prevent zooming out too much
-            }
-
-            originX = mouseX / scale;
-            originY = mouseY / scale;
-
-            map.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
-        });
-
-        map.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            startX = e.clientX;
-            startY = e.clientY;
-            map.style.cursor = "grabbing";
-        });
-
-        map.addEventListener("mousemove", (e) => {
-            if (!isDragging) return;
-
-            const dx = e.clientX - startX;
-            const dy = e.clientY - startY;
-
-            originX += dx / scale;
-            originY += dy / scale;
-
-            map.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
-
-            startX = e.clientX;
-            startY = e.clientY;
-        });
-
-        map.addEventListener("mouseup", () => {
-            isDragging = false;
-            map.style.cursor = "grab";
-        });
-
-        map.addEventListener("mouseleave", () => {
-            isDragging = false;
-            map.style.cursor = "grab";
-        });
-    </script>
 
    
 </body>
