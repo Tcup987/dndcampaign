@@ -189,3 +189,19 @@ form button:hover {
 .resource-links a:hover {
     text-decoration: underline;
 }
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 600px; /* Adjust as needed */
+    border: 1px solid #ccc;
+}
+
+.map-container img {
+    width: 100%;
+    height: auto;
+    cursor: grab;
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+}
