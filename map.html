@@ -86,45 +86,63 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const mapImage = document.getElementById("map-image");
-            const mapContainer = document.querySelector(".map-container");
-            let isDragging = false;
-            let startX, startY, currentX = 0, currentY = 0;
-            let scale = 1;
+        const map = document.getElementById("map");
+        let scale = 1;
+        let originX = 0;
+        let originY = 0;
+        let isDragging = false;
+        let startX, startY;
 
-            // Drag to pan functionality
-            mapImage.addEventListener("mousedown", (e) => {
-                isDragging = true;
-                startX = e.clientX - currentX;
-                startY = e.clientY - currentY;
-                mapImage.style.cursor = "grabbing";
-            });
+        map.addEventListener("wheel", (e) => {
+            e.preventDefault();
+            const scaleAmount = 0.1;
+            const rect = map.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
 
-            document.addEventListener("mousemove", (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                currentX = e.clientX - startX;
-                currentY = e.clientY - startY;
-                mapImage.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-            });
+            if (e.deltaY < 0) {
+                scale += scaleAmount;
+            } else {
+                scale -= scaleAmount;
+                if (scale < 1) scale = 1; // Prevent zooming out too much
+            }
 
-            document.addEventListener("mouseup", () => {
-                isDragging = false;
-                mapImage.style.cursor = "grab";
-            });
+            originX = mouseX / scale;
+            originY = mouseY / scale;
 
-            // Zoom functionality
-            mapContainer.addEventListener("wheel", (e) => {
-                e.preventDefault();
-                const zoomIntensity = 0.1;
-                const zoomFactor = e.deltaY > 0 ? 1 - zoomIntensity : 1 + zoomIntensity;
+            map.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
+        });
 
-                scale *= zoomFactor;
-                scale = Math.max(1, Math.min(scale, 3)); // Restrict zoom level between 1x and 3x
+        map.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            map.style.cursor = "grabbing";
+        });
 
-                mapImage.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
-            });
+        map.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+
+            originX += dx / scale;
+            originY += dy / scale;
+
+            map.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
+
+            startX = e.clientX;
+            startY = e.clientY;
+        });
+
+        map.addEventListener("mouseup", () => {
+            isDragging = false;
+            map.style.cursor = "grab";
+        });
+
+        map.addEventListener("mouseleave", () => {
+            isDragging = false;
+            map.style.cursor = "grab";
         });
     </script>
 
