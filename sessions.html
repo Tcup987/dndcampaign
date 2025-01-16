@@ -59,9 +59,14 @@
                     const sessionDiv = document.createElement('div');
                     sessionDiv.className = 'session';
                     sessionDiv.innerHTML = `
-                        <h3>Session ${session.sessionNumber} - ${session.date}</h3>
-                        <p>${session.details}</p>
+                        <div class="session-header" onclick="toggleSession(this)">
+                            Session ${session.sessionNumber} - ${session.date}
+                        </div>
+                        <div class="session-details">
+                            <p>${session.details}</p>
+                        </div>
                     `;
+
                     sessionContainer.appendChild(sessionDiv);
                 });
             } catch (error) {
