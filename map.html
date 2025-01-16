@@ -6,32 +6,26 @@
     <title>Phyroxia - Map</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Container for the map */
+        /* Styles for the zoomable map */
         .map-container {
             position: relative;
-            width: 80%;
-            max-height: 80vh;
             overflow: hidden;
-            margin: 20px auto;
             border: 2px solid #ccc;
             border-radius: 8px;
-            background: #f4f4f9;
+            margin: 20px auto;
+            max-width: 80%;
         }
 
-        /* Map image with initial zoom settings */
         .map-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            cursor: grab;
             transition: transform 0.3s ease-in-out;
+            cursor: zoom-in;
         }
 
-        /* When dragging */
-        .map-container img:active {
-            cursor: grabbing;
+        .map-container img.zoomed {
+            transform: scale(2); /* Adjust zoom level here */
+            cursor: zoom-out;
         }
     </style>
     <script>
