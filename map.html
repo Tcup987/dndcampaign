@@ -22,25 +22,8 @@
             transition: transform 0.3s ease-in-out;
             cursor: zoom-in;
         }
-
-        .map-container img.zoomed {
-            transform: scale(2); /* Adjust zoom level here */
-            cursor: zoom-out;
-        }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const mapImage = document.querySelector(".map-container img");
 
-            mapImage.addEventListener("click", () => {
-                if (mapImage.classList.contains("zoomed")) {
-                    mapImage.classList.remove("zoomed");
-                } else {
-                    mapImage.classList.add("zoomed");
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
