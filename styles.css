@@ -206,7 +206,7 @@ form button:hover {
     transition: transform 0.2s ease;
 }
 
-#detail-view {
+.detail-view {
     position: fixed;
     top: 20%;
     left: 50%;
@@ -220,14 +220,18 @@ form button:hover {
     z-index: 1000;
 }
 
-#detail-view.hidden {
+.detail-view.hidden {
     display: none;
 }
 
-#close-detail {
+.close-detail {
     margin-bottom: 10px;
     padding: 5px 10px;
     background-color: #ccc;
     border: none;
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
