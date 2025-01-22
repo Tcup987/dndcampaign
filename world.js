@@ -1,34 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded and parsed");
-    setupLinks(); // Ensure the setupLinks function runs here
 
-// Fetch JSON data and initialize the world info page
-fetch("data/world.json")
-    .then((response) => response.json())
-    .then((data) => {
-        console.log("Data loaded successfully.", data);
+    // Fetch JSON data and initialize the world info page
+    fetch("data/world.json")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Data loaded successfully.", data);
 
-        // Call setupLinks with the loaded data
-        setupLinks(data);
-    })
-    .catch((error) => console.error("Error loading data:", error));
+            // Populate world info lists
+            populateWorldInfo(data);
 
+            // Enable dynamic links
+            enableDynamicLinks(data);
+        })
+        .catch((error) => console.error("Error loading data:", error));
+});
 
-function setupLinks(data) {
-    console.log("Setting up links for proper nouns.");
-    const properNouns = document.querySelectorAll(".proper-noun");
-    properNouns.forEach((noun) => {
-        noun.addEventListener("click", () => {
-            const title = noun.textContent.trim();
-            const details = data[title];
-            if (details) {
-                displayDetails(title, details.description);
-            } else {
-                console.error(`No details found for: ${title}`);
-            }
-        });
-    });
-}    
 // Populate sections with world info
 function populateWorldInfo(data) {
     const organizationsList = document.getElementById("organizations-list");
@@ -52,25 +39,6 @@ function populateList(listElement, categoryData) {
         listElement.appendChild(listItem);
     }
 }
-
-// Handle dynamic links for proper nouns
-function enableDynamicLinks(data) {
-    const allLinks = document.querySelectorAll("a[data-key]");
-    allLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const key = link.dataset.key; // Get the proper noun
-            const category = findCategory(data, key); // Find its category
-            if (category) {
-                console.log(`Showing details for: ${key}`);
-                displayDetails(key, data[category][key]);
-            } else {
-                console.error(`Key "${key}" not found in any category.`);
-            }
-        });
-    });
-}
-
 
 // Find the category (Organizations, People, Places) for a key
 function findCategory(data, key) {
@@ -102,9 +70,7 @@ function displayDetails(title, content) {
     }
 }
 
-
 // Close detail view
 document.getElementById("close-detail").addEventListener("click", () => {
     document.getElementById("detail-view").classList.add("hidden");
-});
 });
