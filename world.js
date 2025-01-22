@@ -36,14 +36,18 @@ function enableDynamicLinks(data) {
     allLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
-            const key = link.dataset.key;
-            const category = findCategory(data, key);
+            const key = link.dataset.key; // Get the proper noun
+            const category = findCategory(data, key); // Find its category
             if (category) {
+                console.log(`Showing details for: ${key}`);
                 displayDetails(key, data[category][key]);
+            } else {
+                console.error(`Key "${key}" not found in any category.`);
             }
         });
     });
 }
+
 
 // Find the category (Organizations, People, Places) for a key
 function findCategory(data, key) {
