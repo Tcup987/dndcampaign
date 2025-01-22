@@ -1,8 +1,7 @@
 {
     "Organizations": {
-        "Torgatine Empire": {
-            "description": "A militaristic empire..."
-        }
+        "Torgatine Empire":"A militaristic empire..."
+        
     },
     "People": {
         "Emperor Xander": {
