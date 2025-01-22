@@ -65,21 +65,24 @@ function findCategory(data, key) {
 
 // Display detailed info in the detail view
 function displayDetails(title, content) {
+    console.log(`Showing details for: ${title}`);
+    
     const detailView = document.getElementById("detail-view");
     const detailTitle = document.getElementById("detail-title");
     const detailContent = document.getElementById("detail-content");
 
-    console.log("Detail View Elements:", detailView, detailTitle, detailContent);
-
     if (detailView && detailTitle && detailContent) {
-        detailTitle.textContent = title; // Set the title
-        detailContent.textContent = content; // Set the description
-        detailView.classList.remove("hidden"); // Make the detail view visible
-        console.log("Details updated: ", title, content);
+        // Update the content
+        detailTitle.textContent = title;
+        detailContent.textContent = content;
+
+        // Show the detail view
+        detailView.classList.remove("hidden");
     } else {
         console.error("Detail view elements are missing in the HTML.");
     }
 }
+
 
 // Close detail view
 document.getElementById("close-detail").addEventListener("click", () => {
