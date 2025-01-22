@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded and parsed");
 
     // Fetch JSON data and initialize the world info page
-    fetch("data/world.json")
+    fetch("world-info.json")
         .then((response) => response.json())
         .then((data) => {
             console.log("Data loaded successfully.", data);
