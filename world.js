@@ -70,6 +70,24 @@ function displayDetails(title, content) {
     }
 }
 
+function enableDynamicLinks(data) {
+    const allLinks = document.querySelectorAll("a[data-key]");
+    allLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const key = link.dataset.key; // Get the proper noun
+            const category = findCategory(data, key); // Find its category
+            if (category) {
+                console.log(`Showing details for: ${key}`);
+                displayDetails(key, data[category][key].description);
+            } else {
+                console.error(`Key "${key}" not found in any category.`);
+            }
+        });
+    });
+}
+
+
 // Close detail view
 document.getElementById("close-detail").addEventListener("click", () => {
     document.getElementById("detail-view").classList.add("hidden");
