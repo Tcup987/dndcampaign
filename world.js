@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
+    setupLinks(); // Ensure the setupLinks function runs here
+
 // Fetch JSON data and initialize the world info page
 fetch("world-info.json")
     .then((response) => response.json())
@@ -80,4 +84,5 @@ function displayDetails(title, content) {
 // Close detail view
 document.getElementById("close-detail").addEventListener("click", () => {
     document.getElementById("detail-view").classList.add("hidden");
+});
 });
