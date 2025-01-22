@@ -65,14 +65,18 @@ function displayDetails(title, content) {
     const detailTitle = document.getElementById("detail-title");
     const detailContent = document.getElementById("detail-content");
 
+    console.log("Detail View Elements:", detailView, detailTitle, detailContent);
+
     if (detailView && detailTitle && detailContent) {
         detailTitle.textContent = title; // Set the title
         detailContent.textContent = content; // Set the description
         detailView.classList.remove("hidden"); // Make the detail view visible
+        console.log("Details updated: ", title, content);
     } else {
         console.error("Detail view elements are missing in the HTML.");
     }
 }
+
 // Close detail view
 document.getElementById("close-detail").addEventListener("click", () => {
     document.getElementById("detail-view").classList.add("hidden");
