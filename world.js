@@ -3,13 +3,32 @@ document.addEventListener("DOMContentLoaded", () => {
     setupLinks(); // Ensure the setupLinks function runs here
 
 // Fetch JSON data and initialize the world info page
-fetch("world-info.json")
+fetch("data/world.json")
     .then((response) => response.json())
     .then((data) => {
-        populateWorldInfo(data);
-        enableDynamicLinks(data);
-    });
+        console.log("Data loaded successfully.", data);
 
+        // Call setupLinks with the loaded data
+        setupLinks(data);
+    })
+    .catch((error) => console.error("Error loading data:", error));
+
+
+function setupLinks(data) {
+    console.log("Setting up links for proper nouns.");
+    const properNouns = document.querySelectorAll(".proper-noun");
+    properNouns.forEach((noun) => {
+        noun.addEventListener("click", () => {
+            const title = noun.textContent.trim();
+            const details = data[title];
+            if (details) {
+                displayDetails(title, details.description);
+            } else {
+                console.error(`No details found for: ${title}`);
+            }
+        });
+    });
+}    
 // Populate sections with world info
 function populateWorldInfo(data) {
     const organizationsList = document.getElementById("organizations-list");
