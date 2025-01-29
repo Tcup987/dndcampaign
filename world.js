@@ -29,6 +29,15 @@ function populateSection(containerId, categoryData) {
         titleElement.id = title.replace(/\s+/g, "-").toLowerCase(); // ID for linking
         titleElement.textContent = title;
 
+         // Add image if it exists
+         if (value.image) {
+            const imageElement = document.createElement("img");
+            imageElement.src = value.image;
+            imageElement.alt = key;
+            imageElement.classList.add("entry-image");
+            entryDiv.appendChild(imageElement);
+        }
+
         const contentElement = document.createElement("p");
         contentElement.innerHTML = entry.description; // Insert raw description
 
@@ -36,6 +45,8 @@ function populateSection(containerId, categoryData) {
         entryDiv.appendChild(contentElement);
         container.appendChild(entryDiv);
     }
+    
+    
 }
 
 // Generate auto-links for proper nouns after content is inserted
