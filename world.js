@@ -2,17 +2,24 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("data/world.json")
         .then(response => response.json())
         .then(data => {
+            console.log("World data loaded:", data); // Debugging
+
             populateSection("organizations-list", data.Organizations);
             populateSection("people-list", data.People);
             populateSection("places-list", data.Places);
+
+            setupLinks(); // Run after populating sections
         })
-        .catch(error => console.error("Error loading data:", error));
+        .catch(error => console.error("Error loading world data:", error));
 });
 
 // Populate a section with properly formatted entries
 function populateSection(containerId, categoryData) {
     const container = document.getElementById(containerId);
-    if (!container) return;
+    if (!container) {
+        console.error(`Container ${containerId} not found.`);
+        return;
+    }
 
     for (const [title, entry] of Object.entries(categoryData)) {
         const entryDiv = document.createElement("div");
@@ -23,7 +30,7 @@ function populateSection(containerId, categoryData) {
         titleElement.textContent = title;
 
         const contentElement = document.createElement("p");
-        contentElement.innerHTML = generateLinks(entry.description);
+        contentElement.innerHTML = entry.description; // Insert raw description
 
         entryDiv.appendChild(titleElement);
         entryDiv.appendChild(contentElement);
@@ -31,15 +38,26 @@ function populateSection(containerId, categoryData) {
     }
 }
 
-// Generate links for proper nouns found in the text
-function generateLinks(text) {
+// Generate auto-links for proper nouns after content is inserted
+function setupLinks() {
+    console.log("Setting up links for proper nouns.");
+    
+    const headings = document.querySelectorAll("h3");
     const knownTerms = new Set();
-    document.querySelectorAll("h3").forEach(el => knownTerms.add(el.textContent));
 
-    return text.replace(/\[([^\]]+)\]/g, (match, term) => {
-        if (knownTerms.has(term)) {
-            return `<a href="#${term.replace(/\s+/g, "-").toLowerCase()}">${term}</a>`;
-        }
-        return term;
+    // Collect all known terms from headings
+    headings.forEach(el => knownTerms.add(el.textContent));
+
+    // Update each paragraph to replace matching terms with links
+    document.querySelectorAll(".entry p").forEach(paragraph => {
+        let text = paragraph.innerHTML;
+
+        knownTerms.forEach(term => {
+            const termId = term.replace(/\s+/g, "-").toLowerCase();
+            const regex = new RegExp(`\\b${term}\\b`, "g");
+            text = text.replace(regex, `<a href="#${termId}">${term}</a>`);
+        });
+
+        paragraph.innerHTML = text; // Apply updated text with links
     });
 }
