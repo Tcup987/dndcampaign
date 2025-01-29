@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("world.json")
+    fetch("https://Tcup987.github.io/dndcampaign/world.json")
         .then(response => response.json())
         .then(data => {
             console.log("World data loaded:", data); // Debugging
