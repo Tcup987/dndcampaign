@@ -290,7 +290,7 @@ a:hover {
 /* Scrollable Wrapper */
 .timeline-wrapper {
     position: relative;
-    width: 100%;
+    width: 80%;
     overflow-x: auto;
     white-space: nowrap;
     padding: 20px 0;
