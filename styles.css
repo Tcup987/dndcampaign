@@ -297,36 +297,6 @@ a:hover {
     border-bottom: 2px solid #333; /* A clear visual separator */
 }
 
-/* The Timeline Line */
-.timeline {
-    position: relative;
-    height: 4px;
-    background: #4caf50; /* Green Timeline */
-    width: 2000px; /* Adjusted for scrolling */
-    margin: 0 auto;
-}
-
-/* Timeline Events */
-.event {
-    position: absolute;
-    width: 150px;
-    text-align: center;
-    cursor: pointer;
-    transform: translateX(-50%);
-}
-
-/* Positioning Above & Below */
-.event.above { top: -40px; }
-.event.below { top: 20px; }
-
-/* Stretching Event */
-.event.range {
-    height: 4px;
-    background: #ff9800; /* Orange for stretching events */
-    position: absolute;
-    top: 0;
-}
-
 /* Tooltip for Event Details */
 .tooltip {
     display: none;
@@ -346,3 +316,47 @@ a:hover {
     display: block;
 }
 
+/* Timeline Line */
+.timeline {
+    position: relative;
+    height: 4px;
+    background: #4caf50; /* Green Line */
+    width: 2000px; /* Wide for Scrolling */
+    margin: 0 auto;
+}
+
+/* Timeline Events */
+.event {
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+/* Position Above & Below */
+.event.above { top: -50px; }
+.event.below { top: 20px; }
+
+/* Event Titles (Always Visible) */
+.event-title {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Event Dot (Circle) */
+.event-dot {
+    width: 12px;
+    height: 12px;
+    background: #ff9800;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+/* Multi-Year Event (Stretching) */
+.event.range {
+    height: 4px;
+    background: #ff9800;
+    position: absolute;
+    top: 0;
+}
