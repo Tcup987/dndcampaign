@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("data/world.json")
+    fetch("world.json")
         .then(response => response.json())
         .then(data => {
             console.log("World data loaded:", data); // Debugging
