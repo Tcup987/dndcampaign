@@ -1,94 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM fully loaded and parsed");
-
-    // Fetch JSON data and initialize the world info page
-    fetch("world-info.json")
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Data loaded successfully.", data);
-
-            // Populate world info lists
-            populateWorldInfo(data);
-
-            // Enable dynamic links
-            enableDynamicLinks(data);
+    fetch("data/world.json")
+        .then(response => response.json())
+        .then(data => {
+            populateSection("organizations-list", data.Organizations);
+            populateSection("people-list", data.People);
+            populateSection("places-list", data.Places);
         })
-        .catch((error) => console.error("Error loading data:", error));
+        .catch(error => console.error("Error loading data:", error));
 });
 
-// Populate sections with world info
-function populateWorldInfo(data) {
-    const organizationsList = document.getElementById("organizations-list");
-    const peopleList = document.getElementById("people-list");
-    const placesList = document.getElementById("places-list");
+// Populate a section with properly formatted entries
+function populateSection(containerId, categoryData) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
 
-    populateList(organizationsList, data.Organizations);
-    populateList(peopleList, data.People);
-    populateList(placesList, data.Places);
-}
+    for (const [title, entry] of Object.entries(categoryData)) {
+        const entryDiv = document.createElement("div");
+        entryDiv.classList.add("entry");
 
-// Helper to populate a list with clickable items
-function populateList(listElement, categoryData) {
-    for (const [key, value] of Object.entries(categoryData)) {
-        const listItem = document.createElement("li");
-        const link = document.createElement("a");
-        link.href = "#";
-        link.textContent = key;
-        link.dataset.key = key;
-        listItem.appendChild(link);
-        listElement.appendChild(listItem);
+        const titleElement = document.createElement("h3");
+        titleElement.id = title.replace(/\s+/g, "-").toLowerCase(); // ID for linking
+        titleElement.textContent = title;
+
+        const contentElement = document.createElement("p");
+        contentElement.innerHTML = generateLinks(entry.description);
+
+        entryDiv.appendChild(titleElement);
+        entryDiv.appendChild(contentElement);
+        container.appendChild(entryDiv);
     }
 }
 
-// Find the category (Organizations, People, Places) for a key
-function findCategory(data, key) {
-    for (const category of Object.keys(data)) {
-        if (data[category][key]) {
-            return category;
+// Generate links for proper nouns found in the text
+function generateLinks(text) {
+    const knownTerms = new Set();
+    document.querySelectorAll("h3").forEach(el => knownTerms.add(el.textContent));
+
+    return text.replace(/\[([^\]]+)\]/g, (match, term) => {
+        if (knownTerms.has(term)) {
+            return `<a href="#${term.replace(/\s+/g, "-").toLowerCase()}">${term}</a>`;
         }
-    }
-    return null;
-}
-
-// Display detailed info in the detail view
-function displayDetails(title, content) {
-    console.log(`Showing details for: ${title}`);
-    
-    const detailView = document.getElementById("detail-view");
-    const detailTitle = document.getElementById("detail-title");
-    const detailContent = document.getElementById("detail-content");
-
-    if (detailView && detailTitle && detailContent) {
-        // Update the content
-        detailTitle.textContent = title;
-        detailContent.textContent = content;
-
-        // Show the detail view
-        detailView.classList.remove("hidden");
-    } else {
-        console.error("Detail view elements are missing in the HTML.");
-    }
-}
-
-function enableDynamicLinks(data) {
-    const allLinks = document.querySelectorAll("a[data-key]");
-    allLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const key = link.dataset.key; // Get the proper noun
-            const category = findCategory(data, key); // Find its category
-            if (category) {
-                console.log(`Showing details for: ${key}`);
-                displayDetails(key, data[category][key].description);
-            } else {
-                console.error(`Key "${key}" not found in any category.`);
-            }
-        });
+        return term;
     });
 }
-
-
-// Close detail view
-document.getElementById("close-detail").addEventListener("click", () => {
-    document.getElementById("detail-view").classList.add("hidden");
-});
