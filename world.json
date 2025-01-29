@@ -1,26 +1,26 @@
 {
     "Organizations": {
         "Torgatine Empire": {
-            "description": "The **Torgatine Empire** is a militaristic nation. It survived major conflicts, including the rebellion that destroyed [Atharnac]."
+            "description": "The Torgatine Empire is a militaristic nation. It survived major conflicts, including the rebellion that destroyed Atharnac."
         },
         "Eventrope Republic": {
-            "description": "The **Eventrope Republic** was founded on democracy and united smaller states against the expansion of the [Torgatine Empire]."
+            "description": "The Eventrope Republic was founded on democracy and united smaller states against the expansion of the Torgatine Empire."
         }
     },
     "People": {
         "Xavier": {
-            "description": "Xavier was a prisoner who was experimented on by Gorvan Hallow. He now seeks to escape the grasp of the [Torgatine Empire]."
+            "description": "Xavier was a prisoner who was experimented on by Gorvan Hallow. He now seeks to escape the grasp of the Torgatine Empire."
         },
         "Gorvan Hallow": {
-            "description": "Gorvan Hallow was a researcher in the [Torgatine Empire] who conducted experiments on captives such as [Xavier]."
+            "description": "Gorvan Hallow was a researcher in the Torgatine Empire who conducted experiments on captives such as Xavier."
         }
     },
     "Places": {
         "Atharnac": {
-            "description": "Atharnac was a city destroyed in a magical disaster, resulting in the cursed [Dead Forest]."
+            "description": "Atharnac was a city destroyed in a magical disaster, resulting in the cursed Dead Forest."
         },
         "Dead Forest": {
-            "description": "The Dead Forest was once [Atharnac] before it was obliterated by a failed rebellion against the [Torgatine Empire]."
+            "description": "The Dead Forest was once Atharnac before it was obliterated by a failed rebellion against the Torgatine Empire."
         }
     }
 }
