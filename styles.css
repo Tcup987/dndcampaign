@@ -274,13 +274,74 @@ a:hover {
 
 .entry-image {
     width: 100%;
-    max-width: 400px; /* Adjust as needed */
+    max-width: 200px; /* Adjust as needed */
     height: auto;
     display: block;
     margin-bottom: 10px;
     border-radius: 8px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 }
+/* Timeline Container */
+.timeline-container {
+    margin: 40px 0;
+    text-align: center;
+}
+
+/* Scrollable Wrapper */
+.timeline-wrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+/* The Timeline Line */
+.timeline {
+    position: relative;
+    height: 4px;
+    background: #4caf50; /* Green Timeline */
+    width: 2000px; /* Extend as needed */
+    margin: 0 auto;
+}
+
+/* Timeline Events */
+.event {
+    position: absolute;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Positioning Above & Below */
+.event.above { top: -40px; }
+.event.below { top: 20px; }
+
+/* Stretching Event */
+.event.range {
+    height: 4px;
+    background: #ff9800; /* Orange for stretching events */
+    position: absolute;
+    top: 0;
+}
+
+/* Tooltip for Event Details */
+.tooltip {
+    display: none;
+    position: absolute;
+    background: #222;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: normal;
+    width: 200px;
+}
+
+.event:hover .tooltip {
+    display: block;
+}
+
 
 
 
