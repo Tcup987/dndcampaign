@@ -29,8 +29,7 @@ function populateSection(containerId, categoryData) {
         titleElement.id = title.replace(/\s+/g, "-").toLowerCase(); // ID for linking
         titleElement.textContent = title;
 
-         // Add image if it exists
-         if (value.image) {
+        if (entry.image) {
             const imageElement = document.createElement("img");
             imageElement.src = value.image;
             imageElement.alt = key;
@@ -45,7 +44,6 @@ function populateSection(containerId, categoryData) {
         entryDiv.appendChild(contentElement);
         container.appendChild(entryDiv);
     }
-    
     
 }
 
