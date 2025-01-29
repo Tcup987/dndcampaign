@@ -32,7 +32,7 @@ function populateSection(containerId, categoryData) {
         if (entry.image) {
             const imageElement = document.createElement("img");
             imageElement.src = entry.image;
-            imageElement.alt = key;
+            imageElement.alt = title;
             imageElement.classList.add("entry-image");
             entryDiv.appendChild(imageElement);
         }
