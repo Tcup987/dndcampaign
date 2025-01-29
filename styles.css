@@ -274,7 +274,7 @@ a:hover {
 
 .entry-image {
     width: 100%;
-    max-width: 40px; /* Adjust as needed */
+    max-width: 200px; /* Adjust as needed */
     height: auto;
     display: block;
     margin-bottom: 10px;
