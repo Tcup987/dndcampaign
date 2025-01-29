@@ -31,7 +31,7 @@ function populateSection(containerId, categoryData) {
 
         if (entry.image) {
             const imageElement = document.createElement("img");
-            imageElement.src = value.image;
+            imageElement.src = entry.image;
             imageElement.alt = key;
             imageElement.classList.add("entry-image");
             entryDiv.appendChild(imageElement);
