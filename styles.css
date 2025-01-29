@@ -274,14 +274,14 @@ a:hover {
 
 .entry-image {
     width: 100%;
-    max-width: 200px; /* Adjust as needed */
+    max-width: 40px; /* Adjust as needed */
     height: auto;
     display: block;
     margin-bottom: 10px;
     border-radius: 8px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 }
-/* Timeline Container */
+/* Timeline Containers */
 .timeline-container {
     margin: 40px 0;
     text-align: center;
@@ -294,6 +294,7 @@ a:hover {
     overflow-x: auto;
     white-space: nowrap;
     padding: 20px 0;
+    border-bottom: 2px solid #333; /* A clear visual separator */
 }
 
 /* The Timeline Line */
@@ -301,7 +302,7 @@ a:hover {
     position: relative;
     height: 4px;
     background: #4caf50; /* Green Timeline */
-    width: 2000px; /* Extend as needed */
+    width: 2000px; /* Adjusted for scrolling */
     margin: 0 auto;
 }
 
@@ -311,6 +312,7 @@ a:hover {
     width: 150px;
     text-align: center;
     cursor: pointer;
+    transform: translateX(-50%);
 }
 
 /* Positioning Above & Below */
@@ -336,12 +338,11 @@ a:hover {
     font-size: 14px;
     white-space: normal;
     width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .event:hover .tooltip {
     display: block;
 }
-
-
-
 

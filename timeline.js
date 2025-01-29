@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const worldEvents = [
         { title: "Fall of the Seraphid Dominion", year: 354, position: "above" },
         { title: "Torgatine Empire Founded", year: 501, position: "below" },
-        { title: "Atharnac Destroyed", year: 757, position: "below" },
-        { title: "The ", start: 200, end: 240, position: "above" }
+        { title: "Atharnac Destroyed", year: 757, position: "above" }
     ];
 
     const campaignEvents = [
@@ -18,30 +17,31 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     generateTimeline("world-timeline", worldEvents, 354, 760);
-    generateTimeline("campaign-timeline", campaignEvents, 760.3333,currentDate);
+    generateTimeline("campaign-timeline", campaignEvents, 760.3333, currentDate);
 });
 
-function generateTimeline(timelineId, events, start, end) {
+function generateTimeline(timelineId, events, startYear, endYear) {
     const timeline = document.getElementById(timelineId);
-    const startYear = start; // Earliest event
-    const endYear = end; // Latest event
-    const timelineWidth = 2000; // Pixels
+    const timelineWidth = 2000; // Total width in pixels
     const pixelsPerYear = timelineWidth / (endYear - startYear);
+
+    timeline.innerHTML = ""; // Clear any existing content
 
     events.forEach(event => {
         const eventElement = document.createElement("div");
+        eventElement.classList.add("event");
 
         if (event.start && event.end) {
-            // Stretching Event
-            eventElement.classList.add("event", "range");
+            // Stretching event (multi-year event)
+            eventElement.classList.add("range");
             eventElement.style.left = `${(event.start - startYear) * pixelsPerYear}px`;
             eventElement.style.width = `${(event.end - event.start) * pixelsPerYear}px`;
             eventElement.innerHTML = `<div class="tooltip">${event.title} (${event.start} - ${event.end})</div>`;
         } else {
-            // Single Event
-            eventElement.classList.add("event", event.position);
+            // Single event
+            eventElement.classList.add(event.position);
             eventElement.style.left = `${(event.year - startYear) * pixelsPerYear}px`;
-            eventElement.innerHTML = `<strong>${event.title}</strong> <div class="tooltip">${event.title} (${event.year})</div>`;
+            eventElement.innerHTML = `<strong>${event.title}</strong><div class="tooltip">${event.title} (${event.year})</div>`;
         }
 
         timeline.appendChild(eventElement);
