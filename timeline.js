@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { title: "Defeated Auntie Annie", date: "760-04-20", position: "below" },
         { title: "Met Drayden", date: "760-04-21", position: "above" },
         { title: "Returned to the Republic", date: "760-05-01", position: "below" },
-        { title: "Arrived in Morthan", date: "760-05-02", position: "above" },
-        { title: "Entered Khal'Sinar", date: "760-05-03", position: "below" }
+        { title: "Entered Khal'Sinar", date: "760-05-03", position: "above" }
     ];
 
     generateTimeline("world-timeline", worldEvents, 354, 760, true);
