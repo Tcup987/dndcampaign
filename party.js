@@ -3,10 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             console.log("World data loaded:", data); // Debugging
-
-            populateSection("organizations-list", data.Organizations);
-            populateSection("people-list", data.People);
-            populateSection("places-list", data.Places);
+            
             populateSection("party-list", data.Party);
 
             setupLinks(); // Run after populating sections
