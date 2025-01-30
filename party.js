@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             console.log("World data loaded:", data); // Debugging
-            
+
             populateSection("party-list", data.Party);
 
-            setupLinks(); // Run after populating sections
         })
         .catch(error => console.error("Error loading world data:", error));
 });
