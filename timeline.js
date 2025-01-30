@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { title: "Entered Khal'Sinar", date: "760-05-03", position: "above" }
     ];
 
-    generateTimeline("world-timeline", worldEvents, 354, 760, true);
-    generateTimeline("campaign-timeline", campaignEvents, "760-04-01", "760-05-03", false);
+    generateTimeline("world-timeline", worldEvents, 354, 770, true);
+    generateTimeline("campaign-timeline", campaignEvents, "760-04-01", "760-05-15", false);
 });
 
 
@@ -36,12 +36,11 @@ function dateToDays(dateStr) {
 function generateTimeline(timelineId, events, startDate, endDate, isWorldTimeline) {
     const timeline = document.getElementById(timelineId);
     const timelineWidth = timeline.clientWidth;
-
+    
     const startDays = isWorldTimeline ? startDate * 365 : dateToDays(startDate);
     const endDays = isWorldTimeline ? endDate * 365 : dateToDays(endDate);
 
-    // Subtract 1 to ensure the last event fits inside the container
-    const pixelsPerDay = timelineWidth / (endDays - startDays - 1);
+    const pixelsPerDay = timelineWidth / (endDays - startDays);
 
     timeline.innerHTML = ""; // Clear previous content
 
@@ -50,10 +49,7 @@ function generateTimeline(timelineId, events, startDate, endDate, isWorldTimelin
         eventWrapper.classList.add("event");
 
         const eventPosition = isWorldTimeline ? parseInt(event.date, 10) * 365 : dateToDays(event.date);
-        const leftPosition = Math.min(
-            (eventPosition - startDays) * pixelsPerDay,
-            timelineWidth - 20 // Prevents overflow; adjust "20" based on dot size
-        );
+        const leftPosition = (eventPosition - startDays) * pixelsPerDay;
 
         eventWrapper.classList.add(event.position);
         eventWrapper.style.left = `${leftPosition}px`;
@@ -65,4 +61,3 @@ function generateTimeline(timelineId, events, startDate, endDate, isWorldTimelin
         timeline.appendChild(eventWrapper);
     });
 }
-
