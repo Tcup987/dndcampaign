@@ -36,11 +36,12 @@ function dateToDays(dateStr) {
 function generateTimeline(timelineId, events, startDate, endDate, isWorldTimeline) {
     const timeline = document.getElementById(timelineId);
     const timelineWidth = timeline.clientWidth;
-    
+
     const startDays = isWorldTimeline ? startDate * 365 : dateToDays(startDate);
     const endDays = isWorldTimeline ? endDate * 365 : dateToDays(endDate);
 
-    const pixelsPerDay = timelineWidth / (endDays - startDays);
+    // Subtract 1 to ensure the last event fits inside the container
+    const pixelsPerDay = timelineWidth / (endDays - startDays - 1);
 
     timeline.innerHTML = ""; // Clear previous content
 
@@ -49,7 +50,10 @@ function generateTimeline(timelineId, events, startDate, endDate, isWorldTimelin
         eventWrapper.classList.add("event");
 
         const eventPosition = isWorldTimeline ? parseInt(event.date, 10) * 365 : dateToDays(event.date);
-        const leftPosition = (eventPosition - startDays) * pixelsPerDay;
+        const leftPosition = Math.min(
+            (eventPosition - startDays) * pixelsPerDay,
+            timelineWidth - 20 // Prevents overflow; adjust "20" based on dot size
+        );
 
         eventWrapper.classList.add(event.position);
         eventWrapper.style.left = `${leftPosition}px`;
@@ -61,3 +65,4 @@ function generateTimeline(timelineId, events, startDate, endDate, isWorldTimelin
         timeline.appendChild(eventWrapper);
     });
 }
+

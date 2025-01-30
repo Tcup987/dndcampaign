@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             populateSection("organizations-list", data.Organizations);
             populateSection("people-list", data.People);
             populateSection("places-list", data.Places);
+            populateSection("Gods-list", data.Gods);
 
             setupLinks(); // Run after populating sections
         })

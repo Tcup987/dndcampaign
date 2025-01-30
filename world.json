@@ -23,5 +23,13 @@
         "Dead Forest": {
             "description": "The Dead Forest was once Atharnac before it was obliterated by a failed rebellion against the Torgatine Empire."
         }
+    },
+    "Gods": {
+        "Kelemvor": {
+            "description": ""
+        },
+        "Lathander": {
+            "description": ""
+        }
     }
 }
