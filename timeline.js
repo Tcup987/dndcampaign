@@ -22,10 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function generateTimeline(timelineId, events, startYear, endYear) {
     const timeline = document.getElementById(timelineId);
-    const timelineWidth = 2000; // Total width in pixels
-    const pixelsPerYear = timelineWidth / (endYear - startYear);
+    const pixelsPerYear = timeline.clientWidth / (endYear - startYear);
 
-    timeline.innerHTML = ""; // Clear any existing content
+    timeline.innerHTML = ""; // Clear previous content
 
     events.forEach(event => {
         const eventWrapper = document.createElement("div");
