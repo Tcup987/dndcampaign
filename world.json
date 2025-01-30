@@ -1,27 +1,39 @@
 {
     "Organizations": {
         "Torgatine Empire": {
-            "description": "The Torgatine Empire is a militaristic nation. It survived major conflicts, including the rebellion that destroyed Atharnac.",
+            "description": "The Torgatine Empire is a militaristic nation. It has survived several major conflicts, most recently fighting a civil war agaisnt the Eventrope Republic. The capital, Darsentine, is ruled over by Emperess Kor and the Consular Assembly. Magic is strictly controlled within the borders of the empire, each person required to register their magical abilities, reserving the power for only the elite. During civil war, the empire utlizied a powerful Astron bomb on the city of Atharnac, destroying everything in the area and puncturing the weave in the process. More recently, they seem to have employed the help of Auntie Annie in recruiting forces of undead to take Velgorath and attack the Republic.",
             "image": "Images/Torgatine Empire Emblem.webp"
         },
         "Eventrope Republic": {
-            "description": "The Eventrope Republic was founded on democracy and united smaller states against the expansion of the Torgatine Empire."
+            "description": ""
         }
     },
     "People": {
-        "Xavier": {
-            "description": "Xavier was a prisoner who was experimented on by Gorvan Hallow. He now seeks to escape the grasp of the Torgatine Empire."
-        },
         "Gorvan Hallow": {
-            "description": "Gorvan Hallow was a researcher in the Torgatine Empire who conducted experiments on captives such as Xavier."
+            "description": ""
         }
     },
     "Places": {
         "Atharnac": {
-            "description": "Atharnac was a city destroyed in a magical disaster, resulting in the cursed Dead Forest."
+            "description": ""
         },
         "Dead Forest": {
-            "description": "The Dead Forest was once Atharnac before it was obliterated by a failed rebellion against the Torgatine Empire."
+            "description": ""
+        },
+        "Velgorath": {
+            "description": ""
+        },
+        "Darsentine": {
+            "description": "Capital of the Torgatine Empire, situated on a volcano from which Astron is mined."
+        }
+    },
+    "Substances": {
+        "Astron": {
+            "description": "A powerful, extra-planar blue substance utilized by the Torgatine Empire for both experimentation and destruction. A crystal of Astron was inplanted in Xaviers head to give him abilities and was also used to give Dr. Frygg his sentience. Astron was also used in a bomb used to destroy Atharnac.",
+            "image": "Images/Astron.webp"
+        },
+        "Ash": {
+            "description": "A powder used in the imbueing of magical items and artifacts."
         }
     },
     "Gods": {
