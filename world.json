@@ -1,27 +1,45 @@
 {
     "Organizations": {
         "Torgatine Empire": {
-            "description": "The Torgatine Empire is a militaristic nation. It has survived several major conflicts, most recently fighting a civil war agaisnt the Eventrope Republic. The capital, Darsentine, is ruled over by Emperess Kor and the Consular Assembly. Magic is strictly controlled within the borders of the empire, each person required to register their magical abilities, reserving the power for only the elite. During civil war, the empire utlizied a powerful Astron bomb on the city of Atharnac, destroying everything in the area and puncturing the weave in the process. More recently, they seem to have employed the help of Auntie Annie in recruiting forces of undead to take Velgorath and attack the Republic.",
+            "description": "The Torgatine Empire is a militaristic nation that has survived several major conflicts, most recently fighting a civil war against the Eventrope Republic. The capital, Darsentine, is ruled over by Emperess Kor and the Consular Assembly. Magic is strictly controlled within the borders of the empire, each person required to register their magical abilities, reserving the power for only the elite. During the ongoing civil war, the empire utlizied a powerful Astron bomb on the city of Atharnac, destroying everything in the area and puncturing the Weave in the process. More recently, they seem to have employed the help of Auntie Annie in recruiting forces of undead to take Velgorath and attack the Republic, recently thwarted by the party.",
             "image": "Images/Torgatine Empire Emblem.webp"
         },
         "Eventrope Republic": {
-            "description": ""
+            "description": "A coalition of regions that split off from the Torgatine Empire’s domination, the Eventrope Republic is diverse in population, religions, and magical practices. Unlike the Empire, the Republic is a democracy ruled by the elected Congress of Sovereigns. The Republic has been fighting the Empire for their independence for a decade, using their abundant natural resources, diverse military styles from the varying regions, and strong naval presence to their advantage. However, they recently lost the city of Velgorath to the Empire’s combination of military and undead forces. While the Elven Nellnor’yl Clans have sided with the Republic in the Civil War, they have not provided much reasoning for their decision and the Republic is in no position to question their allies."
+        },
+        "Nellnor’yl Clans": {
+            "description": "A group of elven peoples separated into the Zarvathen (Drow), Siv’raelin (Aquatic), Feyr’alyn (Wood), and Thalor’nor (High) elven sects. Little is known about the clans due to their secretive nature, however they have sided and aided the Eventrope Republic in their effort to separate from the Torgatine Empire."
         }
     },
     "People": {
         "Gorvan Hallow": {
-            "description": ""
+            "description": "An imperial scientist working for the Torgatine Empire who has been described as a deeply troubled man. He experimented on Xavier and is responsible for the Astron implanted in his head. He has also sent magical operatives to retrieve Xavier. He also worked on Drayden, giving him his abilities as a first generation Imbueri."
+        },
+        "General Vivian": {
+            "description": "Leader of the Windhaven forces for the Eventrope Republic in the ongoing Imperial Civil War, gave reinforcements to the party for their quest to destroy Auntie Annie."
+        },
+        "Dr. Frygg": {
+            "description": "A medically trained sentient automaton originating from the Torgatine Empire, Now working with General Vivian and the Eventrope Republic in the conflict. Dr. Frygg has shown keen interest in Xaviers condition, himself carrying an Astron crystal in his head that gave him sentience."
+        },
+        "Doomguide Haven": {
+            "description": "Leader of the Church of the Dead in Riverseed, follower of Kelemvor. Has taken the information about the Seraguine from Kaia and has begun a crusade to eliminate the undead presence in the Wastes of Serath."
+        },
+        "Auntie Annie (deceased)": {
+            "description": "A death hag that took up residence in the crater of Atharnac, foiled and killed by the party as she was raising and undead army that appears to have been working with the Torgatine Empire."
         }
     },
     "Places": {
-        "Atharnac": {
-            "description": ""
+        "Atharnac (destroyed)": {
+            "description": "During the Civil War, the Torgatine Empire responded to conflict in the city of Atharnac with a devastating Astron bomb, the destruction of which seemingly surprised even them. All that remains of the city is a mile-wide crater where Auntie Annie had set up her hut and undead army."
         },
         "Dead Forest": {
-            "description": ""
+            "description": "The area of the Torgatine Empire land that was obliterated by the Empire’s Astron bomb, including the city of Atharnac. The land is covered in a dusting of blue Astron and no life grows here, nor does anything decay. The bomb tore the Weave in the Dead Forest, rendering magic uncontrollably wild and disrupting divine power."
         },
         "Velgorath": {
-            "description": ""
+            "description": "A southern city that once belonged to the Eventrope Republic, the Torgatine Empire overtook Velgorath six months ago with the use of undead forces."
+        },
+        "Khal'Sinar": {
+            "description": "An ancient temple of the Seraphid Dominion that contains a ritual pool only accessible through trials for cleansing of the soul. The party encountered Korashak here on their mission to recover Doomguide Haven."
         },
         "Darsentine": {
             "description": "Capital of the Torgatine Empire, situated on a volcano from which Astron is mined."
@@ -37,10 +55,13 @@
     },
     "Gods": {
         "Kelemvor": {
-            "description": ""
+            "description": "God of the Dead and Judge of the Damned, followers of Kelemvor understand that death is not something to fear but is a natural part of life. Known for maintaining the balance between life and death, Kelemvor opposes undeath in all forms. He was one of the three deities worshipped by the fallen Seraphid Dominion."
         },
         "Lathander": {
-            "description": ""
+            "description": "God of birth and renewal, Lathander’s domain is depicted with flowers, flowing water, and sunbursts. Followers of Lathander are often optimistic and headstrong. He was one of the three deities worshipped by the fallen Seraphid Dominion."
+        },
+        "Sevras": {
+            "description": "God of fate and knowledge, Savras is often depicted with orbs of divination and eyes of fate. He was one of the three deities worshipped by the fallen Seraphid Dominion."
         }
     }
 }
