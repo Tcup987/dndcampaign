@@ -11,11 +11,14 @@
         "Pyrrha": {
             "description": "",
             "image": "Images/Pyrrha.png"
-        }
-        ,
+        },
         "Drayden": {
             "description": "",
             "image": "Images/Drayden.png"
+        },
+        "Sylas": {
+            "description": "",
+            "image": ""
         }
     }
 }
