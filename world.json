@@ -22,15 +22,18 @@
             "description": "A medically trained sentient automaton originating from the Torgatine Empire, Now working with General Vivian and the Eventrope Republic in the conflict. Dr. Frygg has shown keen interest in Xaviers condition, himself carrying an Astron crystal in his head that gave him sentience."
         },
         "Doomguide Haven": {
-            "description": "Leader of the Church of the Dead in Riverseed, follower of Kelemvor. Has taken the information about the Seraguine from Kaia and has begun a crusade to eliminate the undead presence in the Wastes of Serath."
+            "description": "Leader of the Chruch of the Dead in Riverseed, follower of Kelemvor. Has taken the information about the Seraguine from Kaia and has begun a crusade to eliminate the undead presence in the Wastes of Serath."
         },
         "Auntie Annie (deceased)": {
             "description": "A death hag that took up residence in the crater of Atharnac, foiled and killed by the party as she was raising and undead army that appears to have been working with the Torgatine Empire."
+        },
+        "Imbueri": {
+            "description": "A secret group of special forces from the empire, infused with Astron giving them incerdible speed and echo abilities, created by Gorvan Hollow. Have been implicated in the assassination of Sovereign Amada Botar and the kidnap of Xavier from the party."
         }
     },
     "Places": {
         "Atharnac (destroyed)": {
-            "description": "During the Civil War, the Torgatine Empire responded to conflict in the city of Atharnac with a devastating Astron bomb, the destruction of which seemingly surprised even them. All that remains of the city is a mile-wide crater where Auntie Annie had set up her hut and undead army."
+            "description": "During the civil war, the Torgatine Empire responded to conflict in the city of Atharnac with a devastating Astron bomb, the destruction of which seemingly surprised even them. All that remains of the city is a mile-wide crater where Auntie Annie had set up her hut and undead army."
         },
         "Dead Forest": {
             "description": "The area of the Torgatine Empire land that was obliterated by the Empire’s Astron bomb, including the city of Atharnac. The land is covered in a dusting of blue Astron and no life grows here, nor does anything decay. The bomb tore the Weave in the Dead Forest, rendering magic uncontrollably wild and disrupting divine power."
@@ -43,6 +46,12 @@
         },
         "Darsentine": {
             "description": "Capital of the Torgatine Empire, situated on a volcano from which Astron is mined."
+        },
+        "Riverseed": {
+            "description": "A dominant member of the Eventrope Republic, overseen by Sovereign Amada Botar, who was assassinated recently by an Imbueri. The city is a large port of much of the inner Republic goods to flow out by river, and is also home to the Church of the Dead to Kelemvor, built on the remenants of an old cult of Shar."
+        },
+        "Sailons Harbor": {
+            "description": "A dominant member of the Eventrope Republic, overseen by High Captain Paisy Dunborn."
         }
     },
     "Substances": {
@@ -62,6 +71,9 @@
         },
         "Savras": {
             "description": "God of fate and knowledge, Savras is often depicted with orbs of divination and eyes of fate. He was one of the three deities worshipped by the fallen Seraphid Dominion."
+        },
+        "Shar": {
+            "description": "Goddess of darkness and loss, Shar is often depected by a empty black cloak. The goddess, like Kelemvor, occupies the domain of death, however is partial to undeath as a tool and is seen as one of the evil gods."
         }
     }
 }
