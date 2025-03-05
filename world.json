@@ -24,16 +24,16 @@
         "Doomguide Haven": {
             "description": "Leader of the Chruch of the Dead in Riverseed, follower of Kelemvor. Has taken the information about the Seraguine from Kaia and has begun a crusade to eliminate the undead presence in the Wastes of Serath."
         },
-        "Auntie Annie (deceased)": {
-            "description": "A death hag that took up residence in the crater of Atharnac, foiled and killed by the party as she was raising and undead army that appears to have been working with the Torgatine Empire."
+        "Auntie Annie": {
+            "description": "(Deceased) A death hag that took up residence in the crater of Atharnac, foiled and killed by the party as she was raising and undead army that appears to have been working with the Torgatine Empire."
         },
         "Imbueri": {
-            "description": "A secret group of special forces from the empire, infused with Astron giving them incerdible speed and echo abilities, created by Gorvan Hollow. Have been implicated in the assassination of Sovereign Amada Botar and the kidnap of Xavier from the party."
+            "description": "A secret group of special forces from the empire, infused with Astron giving them incerdible speed and echo abilities, created by Gorvan Hallow. Have been implicated in the assassination of Sovereign Amada Botar and the kidnap of Xavier from the party."
         }
     },
     "Places": {
-        "Atharnac (destroyed)": {
-            "description": "During the civil war, the Torgatine Empire responded to conflict in the city of Atharnac with a devastating Astron bomb, the destruction of which seemingly surprised even them. All that remains of the city is a mile-wide crater where Auntie Annie had set up her hut and undead army."
+        "Atharnac": {
+            "description": "(Destroyed) During the civil war, the Torgatine Empire responded to conflict in the city of Atharnac with a devastating Astron bomb, the destruction of which seemingly surprised even them. All that remains of the city is a mile-wide crater where Auntie Annie had set up her hut and undead army."
         },
         "Dead Forest": {
             "description": "The area of the Torgatine Empire land that was obliterated by the Empire’s Astron bomb, including the city of Atharnac. The land is covered in a dusting of blue Astron and no life grows here, nor does anything decay. The bomb tore the Weave in the Dead Forest, rendering magic uncontrollably wild and disrupting divine power."
