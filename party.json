@@ -19,6 +19,10 @@
         "Sylas": {
             "description": "",
             "image": "Images/Sylas.png"
+        },
+        "Avrow": {
+            "description": "",
+            "image": "Images/Avrow.png"
         }
     }
 }
