@@ -1,20 +1,44 @@
 {
     "Photos": {
-        "The Star Corp!!!": {
+        "Kaia fights Korashak, the rematch": {
+            "description": "",
+            "image": "Images/FightingKorashak.png"
+        },
+        "Seraphid Oneshot": {
+            "description": "",
+            "image": "Images/Seraphid.png"
+        },
+        "The High Captain": {
+            "description": "",
+            "image": "Images/TheHighCaptainFull.png"
+        },
+        "She Got hotter (scar)": {
+            "description": "",
+            "image": "Images/TheHighCaptain.png"
+        },
+        "Demahawk is no longer a book!": {
+            "description": "",
+            "image": "Images/Demahawk.png"
+        },
+        "Kaia losses control after Pyrrha dies": {
+            "description": "",
+            "image": "Images/KaiaLostControl.png"
+        },
+        "Pyrrha submits to Shar to protect her friends": {
+            "description": "",
+            "image": "Images/ConsumedByShar.png"
+        },
+        "The Star Corp defeats Gwynharwyf": {
             "description": "",
             "image": "Images/HotFeySummer.png"
+        },
+        "Roc (not as scary as first imagined)": {
+            "description": "",
+            "image": "Images/Roc.jpg"
         },
         "The OG party": {
             "description": "",
             "image": "Images/TheOGs.png"
-        },
-        "Roc (not as scary as first imagined)": {
-            "description": "",
-            "image": "Images/Roc.png"
-        },
-        "The Star Corp Defeats Gwynharwyf": {
-            "description": "",
-            "image": "Images/BattleGywnharwyf.png"
         }
     }
 }
