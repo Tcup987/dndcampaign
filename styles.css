@@ -335,3 +335,13 @@ a:hover {
     position: absolute;
     top: 0;
 }
+
+.entry-image {
+  height: 300px;       /* choose the height you want */
+  width: auto;         /* natural width scaling */
+  max-width: 100%;     /* prevents overflow */
+  display: block;
+  margin: 1rem auto;
+  object-fit: cover;   /* crops excess so proportions look good */
+  border-radius: 8px;  /* optional styling */
+}
