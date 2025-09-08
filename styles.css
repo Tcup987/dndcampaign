@@ -337,7 +337,7 @@ a:hover {
 }
 
 .entry-image {
-  height: 300px;       /* choose the height you want */
+  height: 500px;       /* choose the height you want */
   width: auto;         /* natural width scaling */
   max-width: 100%;     /* prevents overflow */
   display: block;
