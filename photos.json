@@ -28,17 +28,17 @@
             "description": "",
             "image": "Images/ConsumedByShar.png"
         },
-        "The Star Corp defeats Gwynharwyf": {
-            "description": "",
-            "image": "Images/HotFeySummer.png"
-        },
         "Roc (not as scary as first imagined)": {
             "description": "",
-            "image": "Images/Roc.jpg"
+            "image": "Images/Roc.png"
         },
         "The OG party": {
             "description": "",
-            "image": "Images/TheOGs.png"
+            "image": "Images/TheOGs.jpg"
+        },
+        "The Star Corp defeats Gwynharwyf": {
+            "description": "",
+            "image": "Images/HotFeySummer.png"
         }
     }
 }
