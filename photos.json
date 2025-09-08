@@ -1,0 +1,24 @@
+{
+    "Photos": {
+        "": {
+            "description": "The Star Corp!!!",
+            "image": "Images/HotFeySummer.png"
+        },
+        "": {
+            "description": "The OG party",
+            "image": "Images/TheOGs.png"
+        },
+        "": {
+            "description": "Roc (not as scary as first imagined)",
+            "image": "Images/Roc.png"
+        },
+        "": {
+            "description": "Roc (not as scary as first imagined)",
+            "image": "Images/Roc.png"
+        },
+        "": {
+            "description": "The Star Corp Defeats Gwynharwyf",
+            "image": "Images/BattleGywnharwyf.png"
+        }
+    }
+}
